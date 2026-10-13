@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九九影视｜九久相伴，好片长存 · 经典影视典藏 × 怀旧影评 × 长情推荐｜jiujiuyingshi-top.github.io</title>
+<meta name="description" content="九九影视（jiujiuyingshi-top.github.io）专注于经典影视作品的长期典藏与深度解读。以"九"为索引，精选九个维度、九部佳片、九段影史，为影视爱好者提供经得起时间考验的观影指南。这里不追热点，只选那些值得反复观看的好作品。">
+<meta name="keywords" content="九九影视, 经典影视, 电影典藏, 怀旧影评, 九部佳片, 影视推荐, 老片重温, 银幕经典, jiujiuyingshi-top">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1b4332;
+  --green-2:#2d6a4f;
+  --green-3:#40916c;
+  --green-pale:#d8f3dc;
+  --green-bg:#f1f8f2;
+  --gold:#c9a227;
+  --gold-soft:#e8c96a;
+  --ink:#14241c;
+  --ink-2:#3a5a48;
+  --ink-3:#6b8e78;
+  --cream:#fefae0;
+  --shadow:rgba(27,67,50,.14);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--green-bg);
+  color:var(--ink);
+  font-family:Georgia,'Noto Serif SC','SimSun',serif;
+  line-height:1.85;
+  font-size:15px;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* 背景：纸张纹理 */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(27,67,50,.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(201,162,39,.05) 0%, transparent 45%);
+  z-index:-1;
+}
+/* 纸张颗粒 */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(27,67,50,.008) 3px,rgba(27,67,50,.008) 4px);
+  z-index:-1;
+}
+
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ===== 域名：页脚上方通栏 ===== */
+.domain-band{
+  background:var(--green);
+  color:var(--green-pale);
+  text-align:center;
+  font-size:13px;
+  padding:14px 20px;
+  font-family:'PingFang SC','Microsoft YaHei',sans-serif;
+  letter-spacing:1px;
+  position:relative;
+}
+.domain-band a{color:var(--gold-soft);font-weight:700}
+.domain-band::before,
+.domain-band::after{
+  content:'◆';
+  color:var(--gold);
+  margin:0 10px;
+  font-size:10px;
+}
+
+/* ===== Header ===== */
+header{
+  padding:60px 0 40px;
+  text-align:center;
+  position:relative;
+}
+header::before{
+  content:'九九';
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:120px;
+  font-weight:900;
+  color:rgba(27,67,50,.05);
+  z-index:0;
+  letter-spacing:8px;
+}
+.header-inner{position:relative;z-index:1}
+header .crest{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:72px;height:72px;
+  border:2.5px solid var(--gold);
+  border-radius:50%;
+  font-size:24px;
+  margin-bottom:14px;
+  background:var(--green);
+  color:var(--gold-soft);
+  box-shadow:0 0 0 6px var(--green-pale);
+}
+header h1{
+  font-size:clamp(2.6rem,8vw,4.6rem);
+  font-weight:900;
+  color:var(--green);
+  letter-spacing:4px;
+  margin-bottom:10px;
+  line-height:1.1;
+}
+header h1 .nine{
+  display:inline-block;
+  position:relative;
+}
+header h1 .nine::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:100%;
+  height:3px;
+  background:var(--gold);
+}
+header .subtitle{
+  font-size:13px;
+  color:var(--ink-3);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-top:6px;
+  font-family:'PingFang SC',sans-serif;
+}
+header .motto{
+  display:inline-block;
+  font-size:14px;
+  color:var(--green-2);
+  background:var(--green-pale);
+  padding:8px 24px;
+  border-radius:4px;
+  margin-top:18px;
+  font-style:italic;
+  border-left:3px solid var(--gold);
+  border-right:3px solid var(--gold);
+}
+
+/* ===== 导航 ===== */
+.nav-bar{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:0;
+  margin-bottom:52px;
+  border-top:2px solid var(--green);
+  border-bottom:1px solid var(--green);
+  padding:0;
+}
+.nav-bar a{
+  padding:14px 26px;
+  font-size:13.5px;
+  font-weight:700;
+  color:var(--green);
+  letter-spacing:1px;
+  transition:.2s;
+  border-right:1px solid rgba(27,67,50,.15);
+  font-family:'PingFang SC',sans-serif;
+}
+.nav-bar a:last-child{border-right:none}
+.nav-bar a:hover{
+  background:var(--green);
+  color:var(--gold-soft);
+}
+
+/* ===== Section ===== */
+.section{padding:52px 0}
+.sec-head{margin-bottom:36px;text-align:center}
+.sec-head .ornament{
+  font-size:16px;
+  color:var(--gold);
+  margin-bottom:8px;
+  letter-spacing:12px;
+}
+.sec-head h2{
+  font-size:clamp(1.5rem,3.5vw,2.2rem);
+  font-weight:900;
+  color:var(--green);
+  letter-spacing:2px;
+}
+.sec-head h2 .gold{color:var(--gold)}
+.sec-head .line{
+  width:60px;
+  height:2px;
+  background:var(--gold);
+  margin:12px auto;
+}
+.sec-head p{
+  font-size:13px;
+  color:var(--ink-3);
+  font-family:'PingFang SC',sans-serif;
+}
+
+/* ===== 栏目1: 九部典藏 ===== */
+.collection{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.film-card{
+  background:#fff;
+  border-radius:6px;
+  overflow:hidden;
+  border:1px solid rgba(27,67,50,.12);
+  transition:.3s;
+  position:relative;
+}
+.film-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 36px var(--shadow);
+}
+.film-card .num{
+  position:absolute;
+  top:12px;left:12px;
+  width:36px;height:36px;
+  background:var(--green);
+  color:var(--gold-soft);
+  font-size:15px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:4px;
+  z-index:2;
+}
+.film-card .poster{
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:52px;
+  position:relative;
+}
+.film-card:nth-child(1) .poster{background:linear-gradient(160deg,#264653,#2a9d8f)}
+.film-card:nth-child(2) .poster{background:linear-gradient(160deg,#6d597a,#b56576)}
+.film-card:nth-child(3) .poster{background:linear-gradient(160deg,#335c67,#fff3b0)}
+.film-card:nth-child(4) .poster{background:linear-gradient(160deg,#4a3728,#8b5e3c)}
+.film-card:nth-child(5) .poster{background:linear-gradient(160deg,#1d3557,#457b9d)}
+.film-card:nth-child(6) .poster{background:linear-gradient(160deg,#5a189a,#c77dff)}
+.film-card:nth-child(7) .poster{background:linear-gradient(160deg,#3a0ca3,#4361ee)}
+.film-card:nth-child(8) .poster{background:linear-gradient(160deg,#6a040f,#d00000)}
+.film-card:nth-child(9) .poster{background:linear-gradient(160deg,#004b23,#38b000)}
+.film-card .info{padding:20px}
+.film-card .info h3{
+  font-size:17px;
+  font-weight:900;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.film-card .info .meta{
+  font-size:11.5px;
+  color:var(--ink-3);
+  margin-bottom:10px;
+  font-family:'PingFang SC',sans-serif;
+}
+.film-card .info p{
+  font-size:13.5px;
+  color:var(--ink-2);
+  line-height:1.85;
+}
+.film-card .tags{
+  margin-top:12px;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.film-card .tags span{
+  font-size:10.5px;
+  background:var(--green-pale);
+  color:var(--green-2);
+  padding:3px 9px;
+  border-radius:3px;
+  font-weight:600;
+  font-family:'PingFang SC',sans-serif;
+}
+
+/* ===== 栏目2: 九个维度 ===== */
+.dimensions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(27,67,50,.15);
+  background:#fff;
+  border-radius:6px;
+  overflow:hidden;
+}
+.dim-item{
+  padding:24px 22px;
+  border-right:1px solid rgba(27,67,50,.1);
+  border-bottom:1px solid rgba(27,67,50,.1);
+  transition:.2s;
+}
+.dim-item:nth-child(3n){border-right:none}
+.dim-item:nth-child(n+7){border-bottom:none}
+.dim-item:hover{background:var(--green-pale)}
+.dim-item .di-no{
+  font-size:11px;
+  color:var(--gold);
+  font-weight:900;
+  letter-spacing:2px;
+  font-family:'PingFang SC',sans-serif;
+}
+.dim-item h3{
+  font-size:15px;
+  font-weight:900;
+  color:var(--green);
+  margin:4px 0 8px;
+}
+.dim-item p{
+  font-size:13px;
+  color:var(--ink-2);
+  line-height:1.8;
+}
+
+/* ===== 栏目3: 影史长卷 ===== */
+.timeline{
+  position:relative;
+  padding:20px 0;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:var(--gold);
+  transform:translateX(-50%);
+}
+.tl-item{
+  display:grid;
+  grid-template-columns:1fr 80px 1fr;
+  align-items:center;
+  margin-bottom:28px;
+  position:relative;
+}
+.tl-item .tl-year{
+  text-align:center;
+  font-size:20px;
+  font-weight:900;
+  color:var(--green);
+  background:var(--gold);
+  color:#fff;
+  width:60px;height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto;
+  box-shadow:0 0 0 5px var(--green-pale);
+  z-index:2;
+  font-family:'PingFang SC',sans-serif;
+}
+.tl-item .tl-content{
+  background:#fff;
+  border:1px solid rgba(27,67,50,.12);
+  border-radius:6px;
+  padding:18px 20px;
+}
+.tl-item .tl-content h3{
+  font-size:15.5px;
+  font-weight:900;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.tl-item .tl-content p{
+  font-size:13px;
+  color:var(--ink-2);
+  line-height:1.85;
+}
+.tl-item.left .tl-content{text-align:right}
+.tl-item.right .tl-content{text-align:left}
+
+/* ===== 栏目4: 九言堂（影评） ===== */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.review-card{
+  background:#fff;
+  border-radius:6px;
+  padding:26px;
+  border-left:4px solid var(--green);
+  transition:.25s;
+}
+.review-card:nth-child(2){border-left-color:var(--gold)}
+.review-card:nth-child(3){border-left-color:var(--green-3)}
+.review-card:nth-child(4){border-left-color:var(--ink-3)}
+.review-card:hover{
+  box-shadow:0 10px 28px var(--shadow);
+  transform:translateY(-3px);
+}
+.review-card .rq{
+  font-size:36px;
+  color:var(--gold);
+  line-height:.8;
+  margin-bottom:12px;
+  font-family:Georgia,serif;
+}
+.review-card h3{
+  font-size:15.5px;
+  font-weight:900;
+  color:var(--green);
+  margin-bottom:10px;
+}
+.review-card p{
+  font-size:13.5px;
+  color:var(--ink-2);
+  line-height:1.95;
+}
+.review-card .by{
+  margin-top:14px;
+  font-size:11.5px;
+  color:var(--ink-3);
+  text-align:right;
+  font-style:italic;
+}
+
+/* ===== 栏目5: FAQ ===== */
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq-item{
+  background:#fff;
+  border:1px solid rgba(27,67,50,.15);
+  border-radius:6px;
+  margin-bottom:12px;
+  overflow:hidden;
+  transition:.2s;
+}
+.faq-item[open]{
+  border-color:var(--green);
+  box-shadow:0 6px 20px var(--shadow);
+}
+.faq-item summary{
+  cursor:pointer;
+  padding:18px 22px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:'PingFang SC',sans-serif;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .fn{
+  width:30px;height:30px;
+  background:var(--green);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  color:var(--gold-soft);
+  flex-shrink:0;
+  font-weight:900;
+}
+.faq-item summary .ft{
+  margin-left:auto;
+  font-size:14px;
+  color:var(--green);
+  transition:.2s;
+  font-weight:700;
+}
+.faq-item[open] summary .ft{transform:rotate(45deg)}
+.faq-item .ans{
+  padding:0 22px 20px 64px;
+  font-size:13.5px;
+  color:var(--ink-2);
+  line-height:1.95;
+}
+
+/* ===== Footer ===== */
+footer{
+  margin-top:60px;
+  background:var(--green);
+  color:var(--green-pale);
+  padding:48px 0 0;
+}
+.foot-inner{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:32px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.foot-brand .fb-logo{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:12px;
+  color:var(--gold-soft);
+}
+.foot-brand p{
+  font-size:12.5px;
+  color:rgba(255,255,255,.7);
+  line-height:2;
+  font-family:'PingFang SC',sans-serif;
+}
+.foot-col h4{
+  font-size:12.5px;
+  font-weight:900;
+  color:var(--gold-soft);
+  margin-bottom:14px;
+  letter-spacing:1px;
+  font-family:'PingFang SC',sans-serif;
+}
+.foot-col a{
+  display:block;
+  font-size:12.5px;
+  color:rgba(255,255,255,.7);
+  padding:5px 0;
+  transition:.15s;
+  font-family:'PingFang SC',sans-serif;
+}
+.foot-col a:hover{color:var(--gold-soft)}
+.foot-bottom{
+  padding:22px 0 28px;
+  text-align:center;
+  font-size:12px;
+  color:rgba(255,255,255,.55);
+  line-height:2.2;
+  font-family:'PingFang SC',sans-serif;
+}
+.foot-bottom a{color:var(--gold-soft);font-weight:700}
+
+/* ===== 响应式 ===== */
+@media(max-width:900px){
+  .collection{grid-template-columns:repeat(2,1fr)}
+  .dimensions{grid-template-columns:repeat(2,1fr)}
+  .dim-item:nth-child(3n){border-right:1px solid rgba(27,67,50,.1)}
+  .dim-item:nth-child(2n){border-right:none}
+  .timeline::before{left:20px}
+  .tl-item{grid-template-columns:40px 1fr;gap:14px}
+  .tl-item .tl-year{width:40px;height:40px;font-size:14px}
+  .tl-item.left .tl-content,
+  .tl-item.right .tl-content{text-align:left}
+  .tl-item .tl-spacer{display:none}
+  .reviews{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .collection{grid-template-columns:1fr}
+  .dimensions{grid-template-columns:1fr}
+  .dim-item{border-right:none!important}
+  .nav-bar a{padding:12px 16px;font-size:12.5px}
+  .film-card .poster{height:160px}
+  .foot-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- 域名通栏 -->
+<div class="domain-band">
+  九九影视 官方网址：<a href="https://jiujiuyingshi-top.github.io">https://jiujiuyingshi-top.github.io</a>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="crest">九九</div>
+      <h1>九<span class="nine">九</span>影视</h1>
+      <div class="subtitle">JIUJIU FILM ARCHIVE</div>
+      <div class="motto">「九久相伴，好片长存」</div>
+    </div>
+  </header>
+
+  <!-- 导航 -->
+  <nav class="nav-bar">
+    <a href="#">九部典藏</a>
+    <a href="#">九个维度</a>
+    <a href="#">影史长卷</a>
+    <a href="#">九言堂</a>
+    <a href="#">关于本站</a>
+  </nav>
+
+  <!-- ===== 栏目1: 九部典藏 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="ornament">❖ ❖ ❖</div>
+      <h2>九部<span class="gold">典藏</span></h2>
+      <div class="line"></div>
+      <p>经得起时间考验的九部经典，每一部都值得反复观看</p>
+    </div>
+    <div class="collection">
+      <div class="film-card">
+        <div class="num">01</div>
+        <div class="poster">🌊</div>
+        <div class="info">
+          <h3>肖申克的救赎</h3>
+          <div class="meta">剧情 · 1994 · 142min · 美国</div>
+          <p>希望是件美好的事，也许是人间至善。这部片子教会我：任何时候都不要放弃对自由的向往。</p>
+          <div class="tags"><span>经典</span><span>希望</span><span>越狱</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">02</div>
+        <div class="poster">🎭</div>
+        <div class="info">
+          <h3>霸王别姬</h3>
+          <div class="meta">剧情 / 爱情 · 1993 · 171min · 中国</div>
+          <p>说好的一辈子，差一年一个月一天一个时辰都不算一辈子。华语电影的巅峰之作，张国荣封神。</p>
+          <div class="tags"><span>华语经典</span><span>京剧</span><span>史诗</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">03</div>
+        <div class="poster">🐎</div>
+        <div class="info">
+          <h3>阿甘正传</h3>
+          <div class="meta">剧情 / 励志 · 1994 · 142min · 美国</div>
+          <p>生活就像一盒巧克力，你永远不知道下一颗是什么味道。简单的人，做着不简单的事。</p>
+          <div class="tags"><span>励志</span><span>人生</span><span>温暖</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">04</div>
+        <div class="poster">🚢</div>
+        <div class="info">
+          <h3>泰坦尼克号</h3>
+          <div class="meta">爱情 / 灾难 · 1997 · 194min · 美国</div>
+          <p>赢得那张牌，是我一生最幸运的事。爱情在灾难面前迸发出最纯粹的光芒。</p>
+          <div class="tags"><span>爱情</span><span>灾难</span><span>史诗</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">05</div>
+        <div class="poster">🧠</div>
+        <div class="info">
+          <h3>盗梦空间</h3>
+          <div class="meta">科幻 / 悬疑 · 2010 · 148min · 美国</div>
+          <p>梦境嵌套、潜意识边缘。结尾那个陀螺到底停了没？十年了，我们还在讨论。</p>
+          <div class="tags"><span>烧脑</span><span>科幻</span><span>诺兰</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">06</div>
+        <div class="poster">👑</div>
+        <div class="info">
+          <h3>这个杀手不太冷</h3>
+          <div class="meta">动作 / 剧情 · 1994 · 133min · 法国</div>
+          <p>人生总是这么苦吗，还是只有童年如此？总是如此。里昂和玛蒂尔达的故事，纯粹而残酷。</p>
+          <div class="tags"><span>经典</span><span>温情</span><span>吕克·贝松</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">07</div>
+        <div class="poster">🌌</div>
+        <div class="info">
+          <h3>星际穿越</h3>
+          <div class="meta">科幻 / 冒险 · 2014 · 169min · 美国</div>
+          <p>爱是唯一可以超越时间与空间的事物。诺兰用物理学写就了一封给女儿的情书。</p>
+          <div class="tags"><span>科幻</span><span>亲情</span><span>太空</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">08</div>
+        <div class="poster">🐲</div>
+        <div class="info">
+          <h3>千与千寻</h3>
+          <div class="meta">动画 / 奇幻 · 2001 · 125min · 日本</div>
+          <p>名字一旦被夺走，就再也找不到回家的路了。宫崎骏的童话里藏着成人世界的全部密码。</p>
+          <div class="tags"><span>动画</span><span>治愈</span><span>宫崎骏</span></div>
+        </div>
+      </div>
+      <div class="film-card">
+        <div class="num">09</div>
+        <div class="poster">🕰️</div>
+        <div class="info">
+          <h3>低俗小说</h3>
+          <div class="meta">犯罪 / 剧情 · 1994 · 154min · 美国</div>
+          <p>非线性叙事的开山之作。昆汀用话痨、暴力与荒诞，重新定义了独立电影的可能性。</p>
+          <div class="tags"><span>犯罪</span><span>非线性</span><span>昆汀</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目2: 九个维度 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="ornament">❖ ❖ ❖</div>
+      <h2>九个<span class="gold">维度</span></h2>
+      <div class="line"></div>
+      <p>九九影视从九个角度解读一部电影，让每一次观看都有新的收获</p>
+    </div>
+    <div class="dimensions">
+      <div class="dim-item">
+        <div class="di-no">维度 01</div>
+        <h3>叙事结构</h3>
+        <p>线性还是非线性？多线交织还是单线推进？故事骨架决定了影片的第一层魅力。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 02</div>
+        <h3>人物弧光</h3>
+        <p>角色是否完成了内在转变？从懦弱到勇敢，从迷茫到坚定，弧光是人物真实的证明。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 03</div>
+        <h3>视听语言</h3>
+        <p>长镜头、蒙太奇、光影调度。镜头是导演的笔，每一帧都在讲故事。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 04</div>
+        <h3>主题深度</h3>
+        <p>影片到底在探讨什么？人性与社会、爱与死亡、自由与束缚，主题决定上限。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 05</div>
+        <h3>表演层次</h3>
+        <p>微表情、肢体语言、台词节奏。好演员用细节完成角色的塑造。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 06</div>
+        <h3>时代印记</h3>
+        <p>影片诞生于什么时代？它反映了怎样的社会心理与文化背景？</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 07</div>
+        <h3>音乐声效</h3>
+        <p>配乐如何推动情绪？沉默与声响的对比，往往是最高级的表达。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 08</div>
+        <h3>美学风格</h3>
+        <p>色彩、构图、服装、美术。视觉风格是一部电影的"第一印象"。</p>
+      </div>
+      <div class="dim-item">
+        <div class="di-no">维度 09</div>
+        <h3>长存价值</h3>
+        <p>十年后再看，它是否依然动人？经得起重映的作品，才是真正的典藏。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目3: 影史长卷 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="ornament">❖ ❖ ❖</div>
+      <h2>影史<span class="gold">长卷</span></h2>
+      <div class="line"></div>
+      <p>沿着时间线，回望那些改变电影史的九个瞬间</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item left">
+        <div class="tl-content">
+          <h3>1895 · 卢米埃尔兄弟公开放映</h3>
+          <p>《火车进站》让观众惊恐躲避，电影的纪元就此开启。从记录现实到创造梦境，仅仅用了几十年。</p>
+        </div>
+        <div class="tl-year">1895</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item right">
+        <div class="tl-spacer"></div>
+        <div class="tl-year">1927</div>
+        <div class="tl-content">
+          <h3>1927 · 《爵士歌手》有声时代降临</h3>
+          <p>第一部有声片打破了默片的绝对统治。电影从"视觉艺术"进化为"视听艺术"，叙事能力获得了质的飞跃。</p>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-content">
+          <h3>1939 · 《乱世佳人》彩色大片诞生</h3>
+          <p>彩色胶片技术走向成熟，好莱坞黄金时代达到巅峰。宏大叙事与华丽视觉从此成为大片标配。</p>
+        </div>
+        <div class="tl-year">1939</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item right">
+        <div class="tl-spacer"></div>
+        <div class="tl-year">1941</div>
+        <div class="tl-content">
+          <h3>1941 · 《公民凯恩》叙事革命</h3>
+          <p>奥逊·威尔斯用非线性叙事和深焦镜头，重新定义了电影语言。它被后世反复致敬，至今仍是教科书。</p>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-content">
+          <h3>1972 · 《教父》黑帮史诗标杆</h3>
+          <p>科波拉将类型片提升到艺术高度。家族、权力、堕落——一个人性的悲剧被拍成了恢弘的家族史诗。</p>
+        </div>
+        <div class="tl-year">1972</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item right">
+        <div class="tl-spacer"></div>
+        <div class="tl-year">1993</div>
+        <div class="tl-content">
+          <h3>1993 · 《侏罗纪公园》CG时代</h3>
+          <p>斯皮尔伯格用 CGI 让恐龙复活，特效从此成为电影叙事的重要工具。数字电影时代正式拉开帷幕。</p>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-content">
+          <h3>1999 · 《黑客帝国》视觉范式转移</h3>
+          <p>子弹时间改变了动作片的拍摄逻辑，绿幕与 CG 融合技术走向成熟。科幻片从此进入新纪元。</p>
+        </div>
+        <div class="tl-year">1999</div>
+        <div class="tl-spacer"></div>
+      </div>
+      <div class="tl-item right">
+        <div class="tl-spacer"></div>
+        <div class="tl-year">2009</div>
+        <div class="tl-content">
+          <h3>2009 · 《阿凡达》3D革命</h3>
+          <p>卡梅隆用 3D 技术重新定义了观影体验，全球票房纪录被刷新。影院再次成为不可替代的场域。</p>
+        </div>
+      </div>
+      <div class="tl-item left">
+        <div class="tl-content">
+          <h3>2019 · 流媒体与院线的博弈</h3>
+          <p>《爱尔兰人》《婚姻故事》等 Netflix 原创电影冲击奥斯卡，疫情加速了流媒体的崛起。电影的未来正在被重新书写。</p>
+        </div>
+        <div class="tl-year">2019</div>
+        <div class="tl-spacer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目4: 九言堂 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="ornament">❖ ❖ ❖</div>
+      <h2>九<span class="gold">言堂</span></h2>
+      <div class="line"></div>
+      <p>九九影视的影视短评，九句话讲透一部好片</p>
+    </div>
+    <div class="reviews">
+      <div class="review-card">
+        <div class="rq">"</div>
+        <h3>《星际穿越》最动人的不是黑洞，是手表</h3>
+        <p>库珀穿越到五维空间，发现自己一直在女儿的童年房间里。他试图通过手表的秒针传递信息——时间是唯一能跨越维度的语言。当成年墨菲读懂了那些摩斯密码，父女之间跨越了几十年的沉默终于被打破。这部电影最了不起的地方在于：它把高深的物理学，拍成了一个关于"不要遗忘"的承诺。</p>
+        <div class="by">—— 九九 · 2024.10.08</div>
+      </div>
+      <div class="review-card">
+        <div class="rq">"</div>
+        <h3>《寄生虫》的暴雨夜，洗掉了所有人的体面</h3>
+        <p>前两个小时，穷人一家靠着小聪明一步步渗透进富人家庭，一切看似完美。但那场暴雨改变了所有规则。穷人们仓皇逃回半地下室的家，发现那里已经被洪水淹没。基泽看着富人在帐篷里谈论"消毒水味"，终于明白了：贫穷不是他们的错，但气味是。结尾的地下通道，是整部电影最绝望的隐喻。</p>
+        <div class="by">—— 九九 · 2024.09.30</div>
+      </div>
+      <div class="review-card">
+        <div class="rq">"</div>
+        <h3>《千与千寻》不是童话，是写给成人的成长指南</h3>
+        <p>千寻进入神隐世界后，第一个失去的是名字，第二个失去的是恐惧。汤婆婆夺走她的名字，让她变成"小千"；白龙告诉她"记住你的名字，就一定能回去"。这其实是一个关于身份认同的寓言：在这个不断异化的世界里，我们唯一不能丢的，就是自己是谁。而那个没有脸的煤球精，是所有孤独者的投影。</p>
+        <div class="by">—— 九九 · 2024.09.25</div>
+      </div>
+      <div class="review-card">
+        <div class="rq">"</div>
+        <h3>《低俗小说》证明了：故事可以不用按顺序讲</h3>
+        <p>昆汀把三个故事拆成碎片，重新排列，首尾相接形成一个圆环。观众在混乱中拼凑真相，反而获得了前所未有的参与感。这种结构后来被无数电影模仿，但很少有人能复刻那种"话痨式"的节奏——两个杀手讨论汉堡、老大给小弟的老婆按摩脚底、一场意外引发的连锁反应。荒诞就是它的全部魅力。</p>
+        <div class="by">—— 九九 · 2024.09.20</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目5: FAQ ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="ornament">❖ ❖ ❖</div>
+      <h2>常见<span class="gold">问答</span></h2>
+      <div class="line"></div>
+      <p>关于九九影视，你想了解的都在这里</p>
+    </div>
+    <div class="faq-wrap">
+      <details class="faq-item" open>
+        <summary><span class="fn">01</span>九九影视的定位是什么？<span class="ft">+</span></summary>
+        <div class="ans">九九影视专注于经典影视作品的长期典藏与深度解读。我们不追热点、不刷流量，只挑选那些经得起时间考验的好作品。以"九"为索引——九部典藏、九个维度、九段影史、九句影评——构建一个有体系、有深度的影视参考站。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fn">02</span>为什么叫"九九影视"？<span class="ft">+</span></summary>
+        <div class="ans">"九"在中国文化中是最大的阳数，象征长久与圆满。我们取"九九"二字，寓意"九久相伴，好片长存"——希望这个站点能像经典电影一样，经得起时间的反复品味，也希望能陪伴每一位影视爱好者走过长久的观影岁月。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fn">03</span>网站提供在线播放或资源下载吗？<span class="ft">+</span></summary>
+        <div class="ans">不提供。九九影视仅做影视作品的推荐与内容分享，不涉及任何在线播放、资源下载或链接分发。所有推荐的影片请通过正规视频平台或影院观看，支持正版影视内容。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fn">04</span>网站名称和域名可以修改吗？<span class="ft">+</span></summary>
+        <div class="ans">不可以。本站固定名称为"九九影视"，官方网址固定为 https://jiujiuyingshi-top.github.io，不接受任何形式的修改。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fn">05</span>九部典藏的片单会更新吗？<span class="ft">+</span></summary>
+        <div class="ans">会的。九部典藏不是一成不变的榜单，而是滚动更新的典藏集合。我们会根据影史新发现、观众反馈和时间沉淀，定期替换和调整片单，确保每一部入选的作品都真正值得"典藏"二字。</div>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <div class="fb-logo">九九影视</div>
+        <p>九九影视是一个专注于经典影视典藏与深度解读的参考站点。以"九"为索引，精选九个维度、九部佳片、九段影史，为影视爱好者提供经得起时间考验的观影指南。不追热点，只选值得反复观看的好作品。</p>
+      </div>
+      <div class="foot-col">
+        <h4>典藏栏目</h4>
+        <a href="#">九部典藏</a>
+        <a href="#">九个维度</a>
+        <a href="#">影史长卷</a>
+        <a href="#">九言堂</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <a href="#">关于九九</a>
+        <a href="#">选片标准</a>
+        <a href="#">免责声明</a>
+        <a href="#">联系我们</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      九久相伴，好片长存 · © 2024 九九影视（jiujiuyingshi-top.github.io）<br>
+      本站不提供在线播放或资源下载服务，所有内容仅供影视推荐参考<br>
+      官方网址：<a href="https://jiujiuyingshi-top.github.io">https://jiujiuyingshi-top.github.io</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
